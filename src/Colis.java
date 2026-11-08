@@ -24,7 +24,14 @@ public abstract class Colis implements Comparable<Colis> {
         return horsDakar;
     }
 
-    public abstract long tarif();
+    public  long tarif(){
+        long montant = (long) getPoids() * Parametres.TARIF_KG;
+        if (isHorsDakar()) {
+            montant += Parametres.SURCHARGE_HORS_DAKAR;
+        }
+        return montant;
+    }
+    
     public abstract String sigle();
     public abstract int priorite();
 

@@ -6,11 +6,7 @@ public class ColisExpress extends Colis {
 
     @Override
     public long tarif() {
-        long tarifBase = (long) getPoids() * Parametres.TARIF_KG;
-        if (isHorsDakar()) {
-            tarifBase += Parametres.SURCHARGE_HORS_DAKAR;
-        }
-        return tarifBase * 3 / 2;
+        return super.tarif() * 3 / 2;
     }
 
     @Override
