@@ -17,9 +17,9 @@ public class Inventaire {
         return somme;
     }
 
-    // Ordre du tableau résultat : {standard, express, fragile}.
+    // Ordre du tableau résultat : {standard, express, fragile,autres}.
     public static int[] compterParType(Object[] objets) {
-        int[] compteurs = new int[3];
+        int[] compteurs = new int[4];
 
         if (objets == null) {
             return compteurs;
@@ -37,6 +37,8 @@ public class Inventaire {
                 compteurs[1]++;
             } else if (objets[i] instanceof ColisStandard) {
                 compteurs[0]++;
+            }else { 
+                compteurs[3]++;
             }
         }
 

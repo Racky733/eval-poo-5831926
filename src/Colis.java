@@ -31,7 +31,7 @@ public abstract class Colis implements Comparable<Colis> {
         }
         return montant;
     }
-    
+
     public abstract String sigle();
     public abstract int priorite();
 
@@ -41,18 +41,19 @@ public abstract class Colis implements Comparable<Colis> {
                 + (horsDakar ? "hors-Dakar" : "Dakar") + " "
                 + tarif() + " FCFA";
     }
-
+    
     @Override
-    public boolean equals(Object objet) {
-        if (this == objet) {
-            return true;
+        public boolean equals(Object objet) {
+            if (this == objet) {
+                return true;
+            }
+            if (objet == null || getClass() != objet.getClass()) {
+                return false;
+            }
+            Colis autre = (Colis) objet;
+            return code.equals(autre.code);
         }
-        if (objet == null || getClass() != objet.getClass()) {
-            return false;
-        }
-        Colis autre = (Colis) objet;
-        return code.equals(autre.code);
-    }
+    
 
     @Override
     public int hashCode() {
